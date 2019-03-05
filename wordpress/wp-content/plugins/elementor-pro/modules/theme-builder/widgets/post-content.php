@@ -37,8 +37,8 @@ class Post_Content extends Widget_Base {
 	}
 
 	public function show_in_panel() {
-		// TODO: Since Elementor 2.2.5, By default don't show. (but keep BC to show it in older versions.)
-		return version_compare( ELEMENTOR_VERSION, '2.2.5', '<' );
+		// By default don't show.
+		return false;
 	}
 
 	protected function _register_controls() {
@@ -151,7 +151,6 @@ class Post_Content extends Widget_Base {
 
 			// Print manually (and don't use `the_content()`) because it's within another `the_content` filter, and the Elementor filter has been removed to avoid recursion.
 			$content = Plugin::elementor()->frontend->get_builder_content( $post->ID, true );
-			$content = apply_filters( 'the_content', $content );
 
 			// Restore edit mode state
 			Plugin::elementor()->editor->set_edit_mode( $is_edit_mode );
@@ -177,6 +176,8 @@ class Post_Content extends Widget_Base {
 				Plugin::elementor()->frontend->add_content_filter();
 
 				return;
+			} else {
+				$content = apply_filters( 'the_content', $content );
 			}
 		} // End if().
 

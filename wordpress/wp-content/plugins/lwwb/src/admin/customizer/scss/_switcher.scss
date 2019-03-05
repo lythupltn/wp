@@ -1,0 +1,68 @@
+.lwwb-control-inner-lwwb-switcher {
+    position: relative;
+    .lwwb-control-lwwb-switcher {
+        .switcher-wrapper {
+            display: block;
+            input[type=checkbox] {
+                display: none;
+            }
+            label {
+                background-color: #ddd;
+                border-radius: 14px;
+                cursor: pointer;
+                display: inline-block;
+                height: 20px;
+                outline: none;
+                position: absolute;
+                top: 0;
+                -webkit-transition: background 0.2s ease;
+                transition: background 0.2s ease;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                width: 34px;
+                right: 5px;
+                &::after, &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                }
+                &::after {
+                    background-color: #ddd;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    height: 20px;
+                    -webkit-transition: background 0.2s ease, -webkit-transform 0.2s ease;
+                    transition: background 0.2s ease, -webkit-transform 0.2s ease;
+                    transition: transform 0.2s ease, background 0.2s ease;
+                    transition: transform 0.2s ease, background 0.2s ease, -webkit-transform 0.2s ease;
+                    width: 20px;
+                }
+                &::before {
+                    background-color: #fff;
+                    border-radius: 60px;
+                    bottom: 2px;
+                    left: 2px;
+                    right: 2px;
+                    top: 2px;
+                    -webkit-transition: background 0.2s ease;
+                    transition: background 0.2s ease;
+                }
+            }
+            input[type=checkbox]:checked+label {
+                background-color: #0085ba;
+                &::after {
+                    background-color: #0085ba;
+                    border: 2px solid #fff;
+                    -webkit-transform: translateX(14px);
+                    -ms-transform: translateX(14px);
+                    transform: translateX(14px);
+                }
+                &::before {
+                    background-color: #0085ba;
+                }
+            }
+        }
+    }
+}

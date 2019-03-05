@@ -1,0 +1,66 @@
+/* 
++ Margin Padding
++ Background styles 
++ Border styles 
++ Typography styles 
++ Responsive styles 
++ Annimation styles 
++ Shape styles */
+
+.lwwb-elmn {
+  position: relative;
+}
+
+/* Shape styles */
+
+.lwwb-elmn {
+  > .lwwb-elmn-shape {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+
+    svg {
+      display: block;
+      width: -webkit-calc(100% + 1.3px);
+      width: calc(100% + 1.3px);
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+
+    &.lwwb-elmn-shape-bottom {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    &.lwwb-elmn-shape-top {
+      top: 0;
+    }
+
+    &.lwwb-elmn-shape-bottom {
+      bottom: 0;
+    }
+  }
+}
+
+/* Background styles */
+.lwwb-elmn {
+  > .lwwb-elmn-background-overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+}
+
+/* Section styles */
+.lwwb_website_page_builder > .section {
+  padding: 0px;
+}

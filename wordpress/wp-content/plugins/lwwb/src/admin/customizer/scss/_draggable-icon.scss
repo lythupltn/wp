@@ -1,0 +1,37 @@
+.lwwb-control-inner-lwwb-draggable-icon {
+	float: none;
+	padding: 10px 0;
+}
+.lwwb-control-lwwb-draggable-icon{
+	ul.list-icons{
+		flex-wrap:wrap;
+    	margin:-10px 0 0 -10px;
+		li{
+			border-radius: 2px;
+		    margin:10px 0 0 10px;
+		    flex-grow: 1;
+		    width: calc(100% * (1/4) - 5px - 1px);
+			display: inline-block;
+			padding: 5px;
+			background: #f7f7f7;
+			border: solid 1px #e5e5e5;
+			text-align: center;
+			span.icon{
+				display: flex;
+				align-items: center;
+    			justify-content: center;
+    			margin-bottom: 5px;
+			}
+			span.icon-title{
+				clear: both;
+			}
+
+			&:hover{
+				border-color:#0073aa;
+				cursor: pointer;
+				background: #f0f0f0;
+				color: #0073aa;
+			}
+		}
+	}
+}

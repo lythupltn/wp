@@ -1,0 +1,28 @@
+.customize-pane-child > li {
+  &[id="customize-control-body-text-transform"], &[id="customize-control-typography_font_weight"], &[id="customize-control-typography_font_weight_heading"], &[id="customize-control-body-text-transform-heading"] {
+    width: 50%;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: none;
+  }
+  &[id="customize-control-typography_font_weight"], &[id="customize-control-typography_font_weight_heading"] .customize-pane-child > li[id="customize-control-lwwb-font-weight"] {
+    padding-right: 5px;
+  }
+  &[id="customize-control-body-text-transform"], &[id="customize-control-body-text-transform-heading"] {
+    padding-left: 5px;
+  }
+}
+
+.select2-container .select2-dropdown {
+  z-index: 999999;
+}
+
+.lwwb-elmn-block-typography {
+  display: flex;
+  .elmn-half {
+    width: 48%;
+    margin: 0 5px;
+  }
+}

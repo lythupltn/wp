@@ -1,0 +1,23 @@
+.customize-control-modal{
+	.control-title-description{
+	display: flex;
+    justify-content: space-between;
+
+	}
+	position: relative;
+	.modal-wrapper{
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+	.widget-inside{
+		border-top: 1px solid #e5e5e5;
+		background: #f8f8f8;
+	}
+	.modal-content{
+	}
+	.modal-header{
+		width: 100%;
+		text-align: right;
+	}
+}

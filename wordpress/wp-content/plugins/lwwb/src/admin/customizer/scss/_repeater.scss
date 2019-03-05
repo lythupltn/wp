@@ -1,0 +1,17 @@
+.lwwb-control-lwwb-repeater {
+    .widget-title-action {
+        .repeater-action {
+            float: left;
+            display: inline-block;
+            font-size: 13px;
+            &:hover{
+              background: #fff;
+              border-color: #999
+            }
+            i {
+                padding: 5px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

@@ -1,0 +1,470 @@
+tabs,groups,modal,modal_wrapper,label,description,id,keywords,type,choices,control_layout,display_type,on_device,dependencies,input_type,default,placeholder,input_attrs,unit,css_format
+Content,Image,,,Image,,content_group_image,image,GROUP,,,,,,,,,,,
+,,,,Choose Image,,image,choose image,MEDIA_UPLOAD,,,,,,,"array( 'url'=>'','id'=>'')",,,,
+,,,,Image Size,,image_size,image size,SELECT,get_image_size(),inline,,,"dependencies' => array(
+    array(
+        'control'  => 'image',
+        'operator' => '!==',
+        'value'    => array( 'url' => '','id'=>'' ),
+    ),
+),",,,,,,
+,,,,Alignment,,alignment_rs,,RESPONSIVE_SWITCHER,,,,,"dependencies' => array(
+    array(
+        'control'  => 'image',
+        'operator' => '!==',
+        'value'    => array( 'url' => '','id'=>'' ),
+    ),
+),",,,,,,
+,,,,,,alignment,alignment,BUTTON_SET,"array(
+                    'left'    => 'fa fa-align-left',
+                    'right'   => 'fa fa-align-right',
+                    'center'  => 'fa fa-align-center',
+                ),",,icon,desktop,"dependencies' => array(
+    array(
+        'control'  => 'image',
+        'operator' => '!==',
+        'value'    => array( 'url' => '','id'=>'' ),
+    ),
+),",,,,,,"css_format'     => 'ELMN_WRAPPER > .lwwb-elmn-content{text-align:{{ VALUE }};}',"
+,,,,,,_tablet_alignment,alignment,BUTTON_SET,"array(
+                    'left'    => 'fa fa-align-left',
+                    'right'   => 'fa fa-align-right',
+                    'center'  => 'fa fa-align-center',
+                ),",,icon,tablet,,,,,,,"css_format'     => 'ELMN_WRAPPER > .lwwb-elmn-content{text-align:{{ VALUE }};}',"
+,,,,,,_mobile_alignment,alignment,BUTTON_SET,"array(
+                    'left'    => 'fa fa-align-left',
+                    'right'   => 'fa fa-align-right',
+                    'center'  => 'fa fa-align-center',
+                ),",,icon,mobile,,,,,,,"css_format'     => 'ELMN_WRAPPER > .lwwb-elmn-content{text-align:{{ VALUE }};}',"
+,,,,Caption,,caption,caption,SELECT,"array(
+    'none'  => 'None',
+    'attachment'  => 'Attachment',
+    'custom_caption' => 'Custom Caption',
+),",,,,"dependencies' => array(
+    array(
+        'control'  => 'image',
+        'operator' => '!==',
+        'value'    => array( 'url' => '','id'=>'' ),
+    ),
+),",,,,,,
+,,,,Custom Caption,,custom_caption,custom caption,TEXT,,,,,"dependencies' => array(
+    array(
+        'control'  => 'caption',
+        'operator' => '==',
+        'value'    => 'custom_caption',
+    ),
+),",text,,,,,
+,,,,Caption Alignment,,caption_alignment,caption alignment,BUTTON_SET,"array(
+                    'left'    => 'fa fa-align-left',
+                    'right'   => 'fa fa-align-right',
+                    'center'  => 'fa fa-align-center',
+                    'justify' => 'fa fa-align-justify',
+                ),",,icon,,"dependencies' => array(
+    array(
+        'control'  => 'caption',
+        'operator' => '!==',
+        'value'    => 'none',
+    ),array(
+        'control'  => 'image',
+        'operator' => '!==',
+        'value'    => array( 'url' => '','id'=>'' ),
+    ),
+),",,,,,,"css_format' => 'ELMN_WRAPPER > .lwwb-elmn-content figcaption{text-align:{{ VALUE }};}',"
+,,,,Caption Color,,caption_color,caption color,COLOR_PICKER,,,,,"dependencies' => array(
+    array(
+        'control'  => 'caption',
+        'operator' => '!==',
+        'value'    => 'none',
+    ),array(
+        'control'  => 'image',
+        'operator' => '!==',
+        'value'    => array( 'url' => '','id'=>'' ),
+    ),
+),",,,,,,"css_format' => 'ELMN_WRAPPER > .lwwb-elmn-content figcaption{color:{{ VALUE }};}',"
+,,,,Link,,link,link,SELECT,"array(
+    'none'  => 'None',
+    'media_file'  => 'Media File',
+    'custom_url' => 'Custom URL',
+),",inline,,,"dependencies' => array(
+    array(
+        'control'  => 'image',
+        'operator' => '!==',
+        'value'    => array( 'url' => '','id'=>'' ),
+    ),
+),",text,,,,,
+,,,,Lightbox,,lightbox,lightbox,SELECT,"array(
+    'default'  => 'Default',
+    'yes'  => 'Yes',
+    'no' => 'No',
+),",inline,,,"dependencies' => array(
+    array(
+        'control'  => 'link',
+        'operator' => '==',
+        'value'    => 'media_file',
+    ),
+),",,,,,,
+,,,,Custom URL,,custom_url,custom url,TEXT,,,,,"dependencies' => array(
+    array(
+        'control'  => 'link',
+        'operator' => '==',
+        'value'    => 'custom_url',
+    ),
+),",text,,Insert your link,,,
+,,,,Link Target,,link_target,link target,SELECT,get_link_target(),inline,,,"dependencies' => array(
+    array(
+        'control'  => 'link',
+        'operator' => '==',
+        'value'    => 'custom_url',
+    ),array(
+        'control'  => 'custom_url',
+        'operator' => '!==',
+        'value'    => '',
+    ), 
+),",,,,,,
+,,,,No Follow?,,no_follow,nofollow,SWITCHER,,inline,,,"dependencies' => array(
+    array(
+        'control'  => 'link',
+        'operator' => '==',
+        'value'    => 'custom_url',
+    ),array(
+        'control'  => 'custom_url',
+        'operator' => '!==',
+        'value'    => '',
+    ), 
+),",,,,,,
+Style,Image,,,Image,,style_group_image,image,GROUP,,,,,,,,,,,
+,,,,Width,,width_rs,,RESPONSIVE_SWITCHER,,,,,,,,,,,
+,,,,,,width,width,SLIDER,,,,desktop,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,"css_format'     => ""ELMN_WRAPPER > .lwwb-elmn-content > img { width:{{ VALUE }}%; }"","
+,,,,,,_tablet_width,width,SLIDER,,,,tablet,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,"css_format'     => ""ELMN_WRAPPER > .lwwb-elmn-content > img { width:{{ VALUE }}%; }"","
+,,,,,,_mobile_width,width,SLIDER,,,,mobile,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,"css_format'     => ""ELMN_WRAPPER > .lwwb-elmn-content > img { width:{{ VALUE }}%; }"","
+,,,,Max Width,,max_width_rs,,RESPONSIVE_SWITCHER,,,,,,,,,,,
+,,,,,,max_width,max width,SLIDER,,,,desktop,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,"css_format'     => ""ELMN_WRAPPER > .lwwb-elmn-content > img { max-width:{{ VALUE }}%; }"","
+,,,,,,_tablet_max_width,max width,SLIDER,,,,tablet,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,"css_format'     => ""ELMN_WRAPPER > .lwwb-elmn-content > img { max-width:{{ VALUE }}%; }"","
+,,,,,,_mobile_max_width,max width,SLIDER,,,,mobile,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,"css_format'     => ""ELMN_WRAPPER > .lwwb-elmn-content > img { max-width:{{ VALUE }}%; }"","
+,,,,,,state_switcher,state switcher,BUTTON_SET,"   array(
+                    'normal'    => __('Normal', 'lwwb'),
+                    'hover'   => __('Hover', 'lwwb'),
+                 )",,,,,,,,,,
+,,,,Opacity,,opacity,opacity,SLIDER,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'normal',
+    ),
+),",,,,"'input_attrs'   => array(
+                    'min'  => '0.1',
+                    'max'  => '1',
+                    'step' => '0.01',
+                ),",,"css_format' => ""ELMN_WRAPPER >.lwwb-elmn-content{ opacity:{{ VALUE }}; }"","
+,,CSS Filters,,CSS Filters,,css_filters,css filters,MODAL,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'normal',
+    ),
+),",,,,,,"css_format'   => ""ELMN_WRAPPER > .lwwb-elmn-content{filter: brightness( {{ BRIGHTNESS }}% ) contrast( {{ CONTRAST }}% ) saturate( {{ SATURATION }}% ) blur( {{ BLUR }}px ) hue-rotate( {{ HUE }}deg ) ;}"","
+,,,open,,,,,,,,,,,,,,,,
+,,,,Blur,,blur,blur,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '10',
+                    'step' => '0.1',
+                ),",,
+,,,,Brightness,,brightness,brightness,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Contrast,,contrast,contrast,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Saturation,,saturation,saturation,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Hue,,hue,hue,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,close,,,,,,,,,,,,,,,,
+,,,,Border Type,,border_type,border type,SELECT,get_border_type(),inline,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'normal',
+    ),
+),",,,,,,"css_format'     => 'ELMN_WRAPPER > .lwwb-elmn-content{border-style:{{ VALUE }};}',"
+,,,,Border Radius,,border_radius_rs,,RESPONSIVE_SWITCHER,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'normal',
+    ),
+),",,,,,,
+,,,,,,border_radius,border radius,DIMENSIONS,,,,desktop,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'normal',
+    ),
+),",,,,,"unit'          => array(
+'px' => array(
+    'min'  => '-1000',
+    'max'  => '1000',
+    'step' => '1',
+),
+'%'  => array(
+    'min'  => '0',
+    'max'  => '100',
+    'step' => '1',
+),
+),","css_format'    => ""ELMN_WRAPPER > .lwwb-elmn-content{border-radius: {{ TOP }}{{ UNIT }} {{ RIGHT }}{{ UNIT }} {{ BOTTOM }}{{ UNIT }} {{ LEFT }}{{ UNIT }} ;}"","
+,,,,,,_tablet_border_radius,border radius,DIMENSIONS,,,,tablet,,,,,,"unit'          => array(
+'px' => array(
+    'min'  => '-1000',
+    'max'  => '1000',
+    'step' => '1',
+),
+'%'  => array(
+    'min'  => '0',
+    'max'  => '100',
+    'step' => '1',
+),
+),","css_format'    => ""ELMN_WRAPPER > .lwwb-elmn-content{border-radius: {{ TOP }}{{ UNIT }} {{ RIGHT }}{{ UNIT }} {{ BOTTOM }}{{ UNIT }} {{ LEFT }}{{ UNIT }} ;}"","
+,,,,,,_mobile_border_radius,border radius,DIMENSIONS,,,,mobile,,,,,,"unit'          => array(
+'px' => array(
+    'min'  => '-1000',
+    'max'  => '1000',
+    'step' => '1',
+),
+'%'  => array(
+    'min'  => '0',
+    'max'  => '100',
+    'step' => '1',
+),
+),","css_format'    => ""ELMN_WRAPPER > .lwwb-elmn-content{border-radius: {{ TOP }}{{ UNIT }} {{ RIGHT }}{{ UNIT }} {{ BOTTOM }}{{ UNIT }} {{ LEFT }}{{ UNIT }} ;}"","
+,,Box Shadow,,Box Shadow,,box_shadow,box shadow,MODAL,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'normal',
+    ),
+),",,,,,,"css_format'   => ""ELMN_WRAPPER > .lwwb-elmn-content{box-shadow: {{ HORIZONTAL }}px {{ VERTICAL }}px {{ BLUR }}px {{ SPREAD }}px {{ COLOR }}  {{ POSITION }}  ;}"","
+,,,open,,,,,,,,,,,,,,,,
+,,,,Color,,color,color,COLOR_PICKER,,,,,,,,,,,
+,,,,Blur,,blur,blur,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '10',
+                    'step' => '0.1',
+                ),",,
+,,,,Horizontal,,horizontal,horizontal,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Vertical,,vertical,vertical,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Spread,,spread,spread,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Position,,position,position ,SELECT,"array(
+                            ''      => esc_html__('Outline', 'lwwb'),
+                            'inset' => esc_html__('Inset', 'lwwb'),
+                        )",,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,close,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,Opacity,,opacity_hover,opacity,SLIDER,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,"'input_attrs'   => array(
+                    'min'  => '0.1',
+                    'max'  => '1',
+                    'step' => '0.01',
+                ),",,"css_format' => ""ELMN_WRAPPER:hover >.lwwb-elmn-content{ opacity:{{ VALUE }}; }"","
+,,CSS Filters,,CSS Filters,,css_filters_hover,css filters,MODAL,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,,,"css_format'   => ""ELMN_WRAPPER > .lwwb-elmn-content{filter: brightness( {{ BRIGHTNESS }}% ) contrast( {{ CONTRAST }}% ) saturate( {{ SATURATION }}% ) blur( {{ BLUR }}px ) hue-rotate( {{ HUE }}deg ) ;}"","
+,,,open,,,,,,,,,,,,,,,,
+,,,,Blur,,blur,blur,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '10',
+                    'step' => '0.1',
+                ),",,
+,,,,Brightness,,brightness,brightness,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Contrast,,contrast,contrast,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Saturation,,saturation,saturation,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Hue,,hue,hue,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '1',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,close,,,,,,,,,,,,,,,,
+,,,,Border Type,,border_type_hover,border type,SELECT,get_border_type(),inline,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,,,"css_format'   => 'ELMN_WRAPPER > .lwwb-elmn-content:hover{border-style:{{ VALUE }};}',"
+,,,,Border Radius,,border_radius_rs_hover,,RESPONSIVE_SWITCHER,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,,,
+,,,,,,border_radius_hover,border radius,DIMENSIONS,,,,desktop,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,,"unit'          => array(
+'px' => array(
+    'min'  => '-1000',
+    'max'  => '1000',
+    'step' => '1',
+),
+'%'  => array(
+    'min'  => '0',
+    'max'  => '100',
+    'step' => '1',
+),
+),","css_format'    => ""ELMN_WRAPPER > .lwwb-elmn-content:hover{border-radius: {{ TOP }}{{ UNIT }} {{ RIGHT }}{{ UNIT }} {{ BOTTOM }}{{ UNIT }} {{ LEFT }}{{ UNIT }} ;}"","
+,,,,,,_tablet_border_radius_hover,border radius,DIMENSIONS,,,,tablet,,,,,,"unit'          => array(
+'px' => array(
+    'min'  => '-1000',
+    'max'  => '1000',
+    'step' => '1',
+),
+'%'  => array(
+    'min'  => '0',
+    'max'  => '100',
+    'step' => '1',
+),
+),","css_format'    => ""ELMN_WRAPPER > .lwwb-elmn-content:hover{border-radius: {{ TOP }}{{ UNIT }} {{ RIGHT }}{{ UNIT }} {{ BOTTOM }}{{ UNIT }} {{ LEFT }}{{ UNIT }} ;}"","
+,,,,,,_mobile_border_radius_hover,border radius,DIMENSIONS,,,,mobile,,,,,,"unit'          => array(
+'px' => array(
+    'min'  => '-1000',
+    'max'  => '1000',
+    'step' => '1',
+),
+'%'  => array(
+    'min'  => '0',
+    'max'  => '100',
+    'step' => '1',
+),
+),","css_format'    => ""ELMN_WRAPPER > .lwwb-elmn-content:hover{border-radius: {{ TOP }}{{ UNIT }} {{ RIGHT }}{{ UNIT }} {{ BOTTOM }}{{ UNIT }} {{ LEFT }}{{ UNIT }} ;}"","
+,,Box Shadow,,Box Shadow,,box_shadow_hover,box shadow,MODAL,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,,,"css_format'   => ""ELMN_WRAPPER > .lwwb-elmn-content:hover{box-shadow: {{ HORIZONTAL }}px {{ VERTICAL }}px {{ BLUR }}px {{ SPREAD }}px {{ COLOR }}  {{ POSITION }}  ;}"","
+,,,open,,,,,,,,,,,,,,,,
+,,,,Color,,color,color,COLOR_PICKER,,,,,,,,,,,
+,,,,Blur,,blur,blur,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '10',
+                    'step' => '0.1',
+                ),",,
+,,,,Horizontal,,horizontal,horizontal,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Vertical,,vertical,vertical,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Spread,,spread,spread,SLIDER,,,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,,Position,,position,position ,SELECT,"array(
+                            ''      => esc_html__('Outline', 'lwwb'),
+                            'inset' => esc_html__('Inset', 'lwwb'),
+                        )",,,,,,,,"'input_attrs'   => array(
+                    'min'  => '-100',
+                    'max'  => '100',
+                    'step' => '1',
+                ),",,
+,,,close,,,,,,,,,,,,,,,,
+,,,,Transition Duration,,transition_duration,transition duration,SLIDER,,,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,"'input_attrs'   => array(
+                    'min'  => '0',
+                    'max'  => '3',
+                    'step' => '0.1',
+                ),",,
+,,,,Hover Animation,,hover_animation,hover_animation,SELECT2,get_hover_animation(),,,,"dependencies' => array(
+    array(
+        'control'  => 'state_switcher',
+        'operator' => '===',
+        'value'    => 'hover',
+    ),
+),",,,,,,

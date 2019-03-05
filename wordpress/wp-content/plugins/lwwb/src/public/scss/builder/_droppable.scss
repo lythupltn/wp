@@ -1,0 +1,30 @@
+.ui-droppable {
+    z-index: 999;
+}
+.ui-draggable {
+    cursor: pointer;
+}
+.placeholder {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+.ui-state-highlight {
+    background: #39abde;
+    min-height: 5px;
+    max-height: 100%;
+    width: 100%;
+    transition: height 0.6s ease;
+    display: none;
+}
+.lwwb-is-dragover {
+    .ui-state-highlight {
+        display: block;
+        height: 5px;
+    }
+}
+.ui-droppable-active {}
+.ui-droppable-hover {
+    background-color: green;
+}

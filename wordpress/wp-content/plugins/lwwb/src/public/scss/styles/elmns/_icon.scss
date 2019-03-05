@@ -1,0 +1,43 @@
+.lwwb-elmn-content {
+  .lwwb-icon {
+    display: inline-block;
+    line-height: 1;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 60px;
+    text-align: center;
+    padding: .3em;
+
+    > i {
+      width: 1em;
+      height: 1em;
+      position: relative;
+      display: block;
+    }
+  }
+
+  &.icon-view--stacked {
+    .lwwb-icon {
+      background-color: #0f81cc;
+      color: #ffffff;
+    }
+  }
+
+  &.icon-view--framed {
+    .lwwb-icon {
+      padding: .3em;
+      color: #0f81cc;
+      border: 3px solid #0f81cc;
+      background-color: transparent;
+    }
+  }
+
+  &.icon-shape--circle {
+    .lwwb-icon {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+#lwwb-settings-form  {
+  margin: 25px;
+  .form-wrap{
+    display: block;
+    margin: 25px 0;
+    padding: 10px 25px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 5px 4px -2px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 4px -2px rgba(0,0,0,0.15);
+    .notice{
+      padding: 5px 10px;
+    }
+  }
+}

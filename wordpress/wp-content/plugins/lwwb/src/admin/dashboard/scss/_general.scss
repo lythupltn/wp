@@ -1,0 +1,22 @@
+.button.btn-lwwb-edit {
+  background: #007eb1;
+  color: #fff;
+  box-shadow: none;
+  border: none;
+
+  &:hover {
+    background: #007eb1;
+    color: #fff;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+.lwwb-setting-description {
+  padding: 10px 0;
+}
+
+div#lwwb_meta_content {
+   opacity: 0;
+   height: 0px;
+}

@@ -1,0 +1,143 @@
+/* Select Icon */
+.lwwb-control-lwwb-icon-picker {
+  .lwwb-icon-picker{
+    display: flex;
+  }
+  .preview-icon-wrap {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-right: 0px;
+    cursor: pointer;
+    position: relative;
+  }
+  .preview-icon-icon {
+    width: 35px;
+    display: block;
+    border-right: 0px;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    background: #FFFFFF;
+    i {
+      position: absolute;
+      top: 50%;
+      left: 13px;
+      transform: translateY(-50%);
+    }
+  }
+  input {
+    box-shadow: none !important;
+    outline: none !important;
+    background: #ffffff;
+  }
+  .remove-icon {
+    cursor: pointer;
+    flex: 1;
+    border: 1px solid #ddd;
+    border-left: 0px;
+    font-size: 18px;
+    .dashicons {
+      width: 30px;
+      display: block;
+      transform: translateY(2px);
+    }
+  }
+}
+
+#lwwb-sidebar-icons {
+  position: fixed;
+  left: -300px;
+  border-right: 1px solid #ddd;
+  -webkit-transition: left .5s ease;
+  transition: left .5s ease;
+  width: 300px;
+  bottom: 0px;
+  top: 0px;
+  display: block;
+  z-index: 8;
+  background: #EBEBEB;
+  * {
+    box-sizing: border-box;
+  }
+  .lwwb-sidebar-header {
+    height: 46px;
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+  .lwwb-icon-type-inner {
+    padding: 10px 10px 10px 50px;
+    display: block;
+  }
+  .customize-controls-icon-close {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 41px;
+    padding: 0 2px 0 0;
+    background: #eee;
+    border: none;
+    border-top: 4px solid #eee;
+    border-right: 1px solid #ddd;
+    color: #444;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out, background 0.15s ease-in-out;
+    box-sizing: content-box;
+    text-decoration: none;
+    &:before {
+      font: 400 22px/45px dashicons;
+      content: "";
+      position: relative;
+      top: -3px;
+      left: 13px;
+    }
+  }
+  #lwwb-sidebar-icon-type {
+    display: block;
+    width: 100%;
+  }
+  .lwwb-sidebar-search {
+    background: #ffffff;
+    padding: 10px;
+    input {
+      display: block;
+      width: 100%;
+    }
+  }
+  #lwwb-icon-browser {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+  }
+  .lwwb-list-icons {
+    li {
+      width: 23%;
+      float: left;
+      font-size: 24px;
+      text-align: center;
+      padding: 10px 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 2px;
+      background-color: #fff;
+      &:hover {
+        color: #0085ba;
+      }
+    }
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+  }
+}
+
+.lwwb-list-icons .hide {
+  display: none;
+}

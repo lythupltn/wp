@@ -1,0 +1,23 @@
+ .customize-control-lwwb-unit {
+     justify-content: space-between;
+ }
+ .lwwb-unit {
+     position: absolute;
+     right: 0;
+     bottom: 100%;
+     text-align: right;
+     .lwwb-unit-list {
+         li {
+             display: inline-block;
+             input {
+                 display: none;
+                 &:checked+label {
+                     color: #0073aa;
+                 }
+             }
+             label {
+                 padding: 3px;
+             }
+         }
+     }
+ }

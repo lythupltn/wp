@@ -1,0 +1,27 @@
+.setting-enable-hook {
+  padding-left: 40px;
+  display: inline-block;
+
+  .ui-toggle {
+    &.pd-checkbox {
+      width: 24%;
+      float: left;
+    }
+  }
+}
+
+.lwwb-notice {
+  border-left: 3px solid #ffb900;
+  padding: 1px 10px;
+  background: #f1f1f1;
+}
+.settings-breakpoint {
+  padding: 10px 0;
+  label {
+    display: inline-block;
+    width: 10%;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 18px 0px;
+  }
+}

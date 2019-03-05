@@ -1,0 +1,22 @@
+.customize-control-lwwb-sortable ul li {
+  padding: 8px 10px;
+  line-height: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  .dashicons {
+    &.dashicons-menu {
+      float: right;
+    }
+    &.visibility {
+      color: #49aed8;
+      margin-right: 10px;
+    }
+  }
+  &.invisible {
+    color: #aaa;
+    border: 1px dashed #aaa;
+    .dashicons.visibility {
+      color: #aaa;
+    }
+  }
+}
